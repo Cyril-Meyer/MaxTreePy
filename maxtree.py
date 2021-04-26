@@ -315,7 +315,8 @@ def maxtree(input, connectivity=None):
         if connectivity is None or connectivity not in [6, 18, 26]:
             connectivity = 6
 
-    return maxtree_berger_union_by_rank_level_compression(input, connectivity)
+    return maxtree_berger_union_by_rank(input, connectivity)
+    # return maxtree_berger_union_by_rank_level_compression(input, connectivity)
 
 
 @jit(nopython=True)
@@ -482,7 +483,8 @@ def main():
     import matplotlib.pyplot as plt
 
     # image_input = imageio.imread(uri="examples/images/circuit.png", as_gray=True).astype(dtype=np.uint8)
-    image_input = imageio.imread(uri="examples/images/i3_slice68.png", as_gray=True).astype(dtype=np.uint8)
+    # image_input = imageio.imread(uri="examples/images/i3_slice68.png", as_gray=True).astype(dtype=np.uint8)
+    image_input = imageio.imread(uri="examples/images/test.png", as_gray=True).astype(dtype=np.uint8)
     # image_input = image_input / image_input.max()
     # image_output = area_filter(image_input, 500)
     # image_output = contrast_filter(image_input, 30)
